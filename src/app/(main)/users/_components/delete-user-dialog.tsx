@@ -46,7 +46,7 @@ export function DeleteUserDialog({ user }: DeleteUserDialogProps) {
         <DialogHeader>
           <DialogTitle>Delete User</DialogTitle>
           <DialogDescription>
-            Are you sure you want to delete {user.name}? This action cannot be undone.
+            Are you sure you want to delete {user.firstName} {user.lastName}? This action cannot be undone.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="gap-2 sm:gap-0">

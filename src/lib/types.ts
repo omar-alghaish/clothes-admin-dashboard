@@ -126,6 +126,12 @@ export interface UserFormValues {
   id?: string;
 }
 
+export interface RegisterRequest {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
 
 export interface Category {
   _id: string;

@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
-import { DeleteUserDialog } from "./delete-user-dialog";
 
 export function UserAvatarCell({ avatar }: { avatar: string }) {
   const [open, setOpen] = useState(false);
@@ -170,7 +169,7 @@ export const usersColumns: ColumnDef<User>[] = [
       return (
         <div className="flex items-center justify-end space-x-2">
           <UpdateUserDialog user={user} />
-          <DeleteUserDialog user={user} />
+          {/* <DeleteUserDialog user={user} /> */}
         </div>
       );
     },

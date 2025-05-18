@@ -21,7 +21,7 @@ const transformFormDataToApiFormat = (formData: UserFormValues) => {
     name: formData.name,
     email: formData.email,
     role: formData.role || "user",
-    status: formData.status || "active",
+    status: formData.active || "active",
     phone: formData.phone,
     address: formData.address,
     avatar: formData.avatar,

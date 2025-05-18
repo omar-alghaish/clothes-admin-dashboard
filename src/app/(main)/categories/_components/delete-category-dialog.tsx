@@ -35,7 +35,6 @@ export function DeleteCategoryDialog({ category }: DeleteCategoryDialogProps) {
     }
   };
   
-  const hasProducts = (category.productCount || 0) > 0;
   
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -49,12 +48,12 @@ export function DeleteCategoryDialog({ category }: DeleteCategoryDialogProps) {
           <DialogTitle>Delete Category</DialogTitle>
           <DialogDescription>
             Are you sure you want to delete the "{category.name}" category?
-            {hasProducts && (
+            {/* {hasProducts && (
               <div className="mt-2 text-red-500">
                 Warning: This category has {category.productCount} products associated with it.
                 Deleting this category may affect those products.
               </div>
-            )}
+            )} */}
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="gap-2 sm:gap-0">

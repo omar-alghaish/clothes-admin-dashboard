@@ -58,21 +58,6 @@ export interface RegisterRequest {
   email: string;
   password: string;
   passwordConfirm: string; 
-  brandName: string;
-  brandDescription: string;
-  brandStyle: string;
-  primaryColor: string;
-  businessAddress: {
-    street: string,
-        city: string,
-        state: string,
-        postalCode: string,
-        country: string
-  };
-  phoneNumber: string;
-  website?: string;
-  taxId: string;
-  brandLogo?: File;
 }
 
 export interface RegisterResponse {
@@ -95,6 +80,6 @@ export interface User {
   firstName: string;
   lastName: string;
   email: string;
-  brandName: string;
+  phone?: string;
 }
 

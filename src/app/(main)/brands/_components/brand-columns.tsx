@@ -3,7 +3,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
 import { UpdateBrandDialog } from "./update-brand-dialog";
-import { DeleteBrandDialog } from "./delete-brand-dialog";
 
 // Define the Brand interface based on the provided data structure
 export interface Brand {
@@ -127,7 +126,6 @@ export const brandsColumns: ColumnDef<Brand>[] = [
       return (
         <div className="flex items-center justify-end space-x-2">
           <UpdateBrandDialog brand={brand} />
-          <DeleteBrandDialog brand={brand} />
         </div>
       );
     },

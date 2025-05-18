@@ -11,6 +11,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { AlertCircle } from "lucide-react";
 import { useRegisterMutation } from "@/redux/auth/authApi";
 import { toast, Toaster } from "sonner";
+import { RegisterRequest } from "@/redux/auth/authApi";
 
 export default function SimpleSignupForm() {
   const router = useRouter();
@@ -46,7 +47,7 @@ export default function SimpleSignupForm() {
     validateOnBlur: true,
     onSubmit: async (values) => {
       try {
-        await register(values).unwrap();
+        await register(values as RegisterRequest).unwrap();
         
         toast.success("Registration successful!");
         router.push("/");
@@ -57,7 +58,7 @@ export default function SimpleSignupForm() {
     },
   });
 
-  const FormError = ({ name }) => {
+  const FormError = ({ name }: { name: keyof typeof formik.values }) => {
     return formik.touched[name] && formik.errors[name] ? (
       <div className="text-red-500 text-sm mt-1 flex items-center">
         <AlertCircle className="h-4 w-4 mr-1" />

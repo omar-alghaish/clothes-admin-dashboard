@@ -35,14 +35,9 @@ const prepareCategoryForForm = (category: Category): Partial<CategoryFormValues>
   return {
     _id: category._id,
     name: category.name,
-    slug: category.slug,
     description: category.description,
     gender: category.gender || "neutral",
-    icon: category.icon,
     isActive: category.isActive !== undefined ? category.isActive : true,
-    featured: category.featured || false,
-    metaTitle: category.metaTitle || "",
-    metaDescription: category.metaDescription || "",
   };
 };
 
@@ -53,10 +48,10 @@ interface UpdateCategoryDialogProps {
 
 export function UpdateCategoryDialog({ category, onSuccess }: UpdateCategoryDialogProps) {
   const [open, setOpen] = useState(false);
-  const [updateCategory, { isLoading: isSubmitting }] = useUpdateCategoryMutation();
+  const [updateCategory, { isLoading: isSubmitting, error }] = useUpdateCategoryMutation();
   
   const initialData = prepareCategoryForForm(category);
-  
+   console.log(error)
   const handleSubmit = async (values: CategoryFormValues) => {
     try {
       const apiData = transformFormDataToApiFormat(values);

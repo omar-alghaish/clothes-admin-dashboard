@@ -32,7 +32,7 @@ const formSchema = z.object({
     message: "Name must be at least 2 characters.",
   }),
   description: z.string().optional(),
-  gender: z.enum(["men", "women", "neutral"]).default("neutral"),
+  gender: z.enum(["male", "female", "neutral"]).default("neutral"),
   isActive: z.boolean().default(true),
 });
 
@@ -59,7 +59,7 @@ export function CategoryForm({
     defaultValues: {
       name: initialData.name || "",
       description: initialData.description || "",
-      gender: (initialData.gender as "men" | "women" | "neutral") || "neutral",
+      gender: (initialData.gender as "male" | "female" | "neutral") || "neutral",
       isActive: initialData.isActive !== undefined ? initialData.isActive : true,
     },
   });
@@ -102,8 +102,8 @@ export function CategoryForm({
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="men">Men</SelectItem>
-                    <SelectItem value="women">Women</SelectItem>
+                    <SelectItem value="male">Male</SelectItem>
+                    <SelectItem value="female">Female</SelectItem>
                     <SelectItem value="neutral">Neutral</SelectItem>
                   </SelectContent>
                 </Select>

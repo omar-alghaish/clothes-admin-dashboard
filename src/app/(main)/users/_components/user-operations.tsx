@@ -26,7 +26,7 @@ console.log(users)
             {isLoading ? "Loading..." : `Total: ${totalUsers} users`}
           </p>
         </div>
-        <AddUserDialog onSuccess={refetch} />
+        {/* <AddUserDialog onSuccess={refetch} /> */}
       </div>
       
       <DataTable
