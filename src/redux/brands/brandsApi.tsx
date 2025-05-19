@@ -26,7 +26,7 @@ export const brandApi = apiSlice.injectEndpoints({
     
     updateBrand: builder.mutation({
       query: ({ id, brand }) => ({
-        url: `Brands/${id}/active`,
+        url: `Brands/${id}`,
         method: 'PATCH',
         body: brand,
       }),
